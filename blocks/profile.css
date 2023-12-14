@@ -1,0 +1,144 @@
+.profile {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 51px;
+}
+
+.profile__photo {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  max-width: 120px;
+  max-height: 120px;
+  margin-right: 48px;
+}
+
+.profile__info {
+  display: grid;
+  grid-template-areas:
+    "title button"
+    "description description";
+  grid-template-columns: minmax(auto, 375px) minmax(auto, 20px);
+  align-items: center;
+  column-gap: 13px;
+}
+
+.profile__heading {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-size: 42px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: left;
+  margin: 0;
+  grid-area: title;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__button_type_edit {
+  border: 1px solid #ffffff;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+  background: transparent url(../images/edit-button.svg) center no-repeat;
+  grid-area: button;
+}
+
+.profile__user-description {
+  font-family: "Inter", "Arial", "Helvetica", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: left;
+  margin: 0;
+  grid-area: description;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.profile__button_type_add {
+  width: 150px;
+  height: 50px;
+  background: transparent url(../images/add-button.svg) center no-repeat;
+  margin-left: auto;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+}
+
+.profile__button {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.profile__button:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 885px) {
+  .profile {
+    max-width: 750px;
+  }
+
+  .profile__photo {
+    margin: 0;
+  }
+
+  .profile__info {
+    margin-left: 10px;
+    max-width: 380px;
+    width: 100%;
+    column-gap: 10px;
+    row-gap: 14px;
+    grid-template-columns: minmax(auto, 325px) minmax(auto, 20px);
+  }
+
+  .profile__heading {
+    font-size: 35px;
+  }
+
+  .profile__button_type_edit {
+    width: 18px;
+    height: 18px;
+  }
+
+  .profile__user-description {
+    font-size: 14px;
+  }
+
+  .profile__button_type_add {
+    margin: 0;
+    width: 282px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .profile {
+    flex-direction: column;
+    margin-bottom: 36px;
+  }
+
+  .profile__photo {
+    margin: 0 0 30px 0;
+  }
+
+  .profile__info {
+    max-width: 282px;
+    grid-template-columns: auto auto;
+  }
+
+  .profile__heading {
+    font-size: 22px;
+    text-align: right;
+  }
+
+  .profile__user-description {
+    text-align: center;
+  }
+
+  .profile__button_type_add {
+    margin: 36px 0 0 0;
+  }
+}
